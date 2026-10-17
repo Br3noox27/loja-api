@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProdutoController {
 
+    private final ProdutoRepository produtoRepository; 
+
+    public ProdutoController(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+     }
+
     @GetMapping("/produtos")
     public List<Produto> listar() {
         return List.of(
