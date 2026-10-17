@@ -15,19 +15,15 @@ public class ProdutoController {
     public ProdutoController(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
      }
-
-    @GetMapping("/produtos")
-    public List<Produto> listar() {
-        return List.of(
-                new Produto("Mouse Gamer", 12990, 5),
-                new Produto("Teclado", 25990, 3),
-                new Produto("Monitor", 89990, 2));
-    }
     
     @PostMapping("/produtos")
     public Produto cadastra(@RequestBody Produto cadastrar ) {
         return produtoRepository.save(cadastrar);
     }
 
+    @GetMapping ("/produtos")
+    public List<Produto> listar() {
+        return produtoRepository.findAll();
+    }
 
 }
