@@ -25,13 +25,4 @@ public class CategoriaController {
     public List<Categoria> Listar() {
         return categoriaRepository.findAll();
     }
-
-
-
-
-
-
-
-
-
 }
